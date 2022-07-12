@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Counter from './components/Counter'
 
 class App extends React.Component {
   constructor() {
@@ -36,11 +37,13 @@ render(){
   return(
     <>
     <h1>Counter</h1>
-    <h2> {this.state.count}</h2>
+    <Counter
+    count = {this.state.count}
+    increment = {this.handleClickPlus}
+    substract = {this.handleClickMoins}
+     
+    />
     
-    <button type="button" class="btn btn-outline-success"onClick = {this.handleClickPlus}>+</button>
-    <button type="button" class="btn btn-outline-danger"onClick = {this.handleClickMoins} >-</button>
-
    </>
   ) 
 
@@ -48,7 +51,7 @@ render(){
 
 }
 
-export default App 
+export default App
 
 
 
