@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      
+      count : 0
+
+  }
 }
 
-export default App;
+handleClickPlus = () => {
+  
+this.setState({
+  count : this.state.count +1
+})
+
+}
+handleClickMoins = () => {
+  
+this.setState({
+  count : this.state.count -1
+})
+
+}
+
+
+
+
+
+render(){
+    
+  return(
+    <>
+    <h1>Counter</h1>
+    <h2> {this.state.count}</h2>
+    
+    <button type="button" class="btn btn-outline-success"onClick = {this.handleClickPlus}>+</button>
+    <button type="button" class="btn btn-outline-danger"onClick = {this.handleClickMoins} >-</button>
+
+   </>
+  ) 
+
+  }
+
+}
+
+export default App 
+
+
+
+
+
+
